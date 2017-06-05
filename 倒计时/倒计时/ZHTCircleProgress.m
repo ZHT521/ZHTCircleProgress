@@ -60,7 +60,11 @@
     if (_step==-1) {
         _lab.text = [NSString stringWithFormat:@"%d",0];
         [_timer invalidate];
-        
+        _timer = nil;
+
+        if (self.DoneBlock) {
+            self.DoneBlock();
+        }
     }else{
         CGFloat percent = (_inSumStep-_step)*(M_PI*2)/_inSumStep;
         UIBezierPath *progressPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.center.x - self.frame.origin.x, self.center.y - self.frame.origin.y) radius:self.frame.size.height/2 startAngle:(-M_PI_2) endAngle:percent-M_PI_2 clockwise:YES];
@@ -69,8 +73,6 @@
     }
 
 //    (_inSumStep-_step)/_inSumStep =()/(M_PI*2);
-    
-    
 }
 /*
 // Only override drawRect: if you perform custom drawing.

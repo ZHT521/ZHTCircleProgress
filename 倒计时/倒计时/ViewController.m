@@ -23,6 +23,10 @@
     pro.Backstrokecolor = [UIColor lightGrayColor];
     pro.strokecolor = [UIColor redColor];
     [self.view addSubview:pro];
+    __weak ZHTCircleProgress *weakprogressView = pro;
+    pro.DoneBlock = ^{
+        [weakprogressView removeFromSuperview];
+    };
     [pro getstart];
 }
 

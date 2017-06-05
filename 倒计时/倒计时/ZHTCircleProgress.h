@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void(^PercentDone)();
 
 @interface ZHTCircleProgress : UIView
 @property(nonatomic,assign)NSInteger inSumStep;//总倒计时秒数
@@ -19,6 +20,8 @@
 @property(nonatomic,strong)NSTimer *timer;
 
 @property(nonatomic,strong)UILabel *lab;//
+
+@property (nonatomic,strong) PercentDone DoneBlock;
 
 -(void)getstart;
 @end
