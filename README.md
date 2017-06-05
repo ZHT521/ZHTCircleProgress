@@ -8,3 +8,9 @@
     pro.strokecolor = [UIColor redColor];
     [self.view addSubview:pro];
     [pro getstart];
+
+
+
+
+
+![image](https://github.com/ZHT521/ZHTCircleProgress/blob/master/%E6%95%88%E6%9E%9C%E5%9B%BE.gif?raw=true)
