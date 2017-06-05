@@ -7,6 +7,10 @@
     pro.Backstrokecolor = [UIColor lightGrayColor];
     pro.strokecolor = [UIColor redColor];
     [self.view addSubview:pro];
+    __weak ZHTCircleProgress *weakprogressView = pro;
+    pro.DoneBlock = ^{
+        [weakprogressView removeFromSuperview];
+    };//倒计时完成后调用 清除倒计时视图
     [pro getstart];
 
 
